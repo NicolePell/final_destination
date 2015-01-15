@@ -11,7 +11,12 @@ DataMapper.finalize
 
 DataMapper.auto_upgrade!
 
+set :views, Proc.new { File.join(root, "views") }
+
 
 get '/' do
-  'Hello World'
+
+  @dreams = Dream.all
+  
+  erb :index
 end
