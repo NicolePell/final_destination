@@ -13,10 +13,15 @@ DataMapper.auto_upgrade!
 
 set :views, Proc.new { File.join(root, "views") }
 
-
 get '/' do
-
   @dreams = Dream.all
-  
+
   erb :index
+end
+
+post '/dreams' do
+  title = params["title"]
+  Dream.create(title: title)
+
+  redirect to '/'
 end

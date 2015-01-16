@@ -1,3 +1,8 @@
 <% @dreams.each do |dream| %>
   <%= dream.title %>
 <% end %>
+
+<form action="/dreams" id="new-dream" method="post">
+  Dream: <input type="text" name="title">
+  <input type="submit" value="Add dream">
+</form>
