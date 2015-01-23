@@ -1,5 +1,6 @@
 require 'database_cleaner'
 require 'capybara/rspec'
+# require 'webmock/rspec'
 
 ENV['RACK_ENV'] = 'test'
 
